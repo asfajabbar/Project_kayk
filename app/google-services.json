@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "446279480385",
+    "project_id": "project-kayk",
+    "storage_bucket": "project-kayk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446279480385:android:44be3828009e7ae5be02c0",
+        "android_client_info": {
+          "package_name": "com.example.project_kayk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446279480385-22kqbr2bahl21c05s2v50q5m2h3coeit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqx5Ay1uHXSZ7TI87hR2zPzpzHC56ocGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446279480385-22kqbr2bahl21c05s2v50q5m2h3coeit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
