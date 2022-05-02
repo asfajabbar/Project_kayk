@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Pair;
 import android.view.*;
-import android.os.Bundle;
+import android.os.*;
 import android.view.animation.*;
 import android.widget.*;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+
 
 
 public class MainActivity extends AppCompatActivity {

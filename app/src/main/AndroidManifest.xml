@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_kayk">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".verify_phone"
+            android:exported="false" />
+        <activity
             android:name=".option_screen"
             android:exported="false" />
         <activity

@@ -38,33 +38,23 @@
     android:layout_marginTop="20dp"
     android:layout_marginBottom="20dp"
     android:orientation="vertical">
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/username"
-            android:hint="Username"
+            android:layout_height="wrap_content"
+            android:id="@+id/userlogin"
+            android:hint="Email"
+        android:textColor="@color/black"
             android:textColorHint="@color/gray"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
+        android:inputType="textEmailAddress" />
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
+        android:id="@+id/passlogin"
         android:textColorHint="@color/gray"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/gray"
         android:hint="Password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColor="@color/black"
-                android:ems="15"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:inputType="textPassword"
+        android:textColor="@color/black"/>
     
     <TextView
         android:id="@+id/fp"
@@ -75,12 +65,11 @@
         android:layout_gravity="end"
         android:textColor="#808080"
         android:fontFamily="@font/inria_sans_bold"
-        android:text="Forget Password?"
-
-        android:elevation="0dp"/>
+        android:text="Forgot Password?"
+        android:elevation="8dp"/>
     <Button
         android:id="@+id/log"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LogIn"
         android:textColor="@color/white"
@@ -89,6 +78,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/inria_sans_bold"
         android:layout_marginBottom="5dp"/>
+
     <TextView
         android:id="@+id/newuser"
         android:layout_width="match_parent"
@@ -98,7 +88,7 @@
         android:textAlignment="center"
         android:layout_margin="5dp"
         android:fontFamily="@font/inria_sans_bold"
-        android:text="New User? SignUP" />
+        android:text="New User? Sign up" />
 
 </LinearLayout>
 </LinearLayout>
