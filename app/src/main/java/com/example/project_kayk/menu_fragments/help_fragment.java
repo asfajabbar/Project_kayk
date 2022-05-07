@@ -9,16 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.project_kayk.R;
 import com.example.project_kayk.home_screen;
 
 public class help_fragment extends AppCompatActivity{
-    ImageButton closebtn;
+    ImageView closebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_fragment);
+        getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
         closebtn.setOnClickListener((view) ->
         {

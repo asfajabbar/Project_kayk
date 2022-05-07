@@ -80,14 +80,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Confirm Password"
-
             android:textColor="@color/black"
             android:inputType="textPassword" />
 
 
         <Button
             android:id="@+id/signup"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/white"
@@ -95,13 +94,13 @@
             android:layout_margin="10dp"
             android:text="SignUp" />
 
-        <Button
+        <TextView
             android:id="@+id/alreadyacc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:background="#f498ad"
+            android:textSize="18sp"
+            android:textColor="@color/gray"
             android:layout_marginTop="10dp"
             android:text="Already have an account? Login" />
 
@@ -118,10 +117,11 @@
             android:layout_marginLeft="20dp"
            android:background="@drawable/google"/>
             <TextView
+                android:id="@+id/google_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sign in with Google"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:paddingTop="5dp"
                 android:textColor="@color/gray"
                 android:fontFamily="@font/inria_sans_bold"

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -12,16 +13,24 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.RenderNode;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -44,26 +53,27 @@ import java.util.ArrayList;
 public class home_screen extends AppCompatActivity implements View.OnClickListener,NavigationView.OnNavigationItemSelectedListener{
      static final float END_SCALE = 0.7f;
      LinearLayout contentView;
-    RecyclerView topRecycler,mostviewed_recycler;
-    RecyclerView.Adapter adapter,adapter1;
-    public CardView card1,card2,card3,card4;
-    DrawerLayout dLayout;
-    NavigationView navigationView;
-    ImageView menu;
-    TextView viewAll;
+     RecyclerView topRecycler,mostviewed_recycler;
+     RecyclerView.Adapter adapter;
+     RecyclerView.Adapter adapter1;
+     public CardView card1,card2,card3;
+     DrawerLayout dLayout;
+     NavigationView navigationView;
+     ImageView menu;
+     TextView viewAll;
+     EditText editsearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         //..........................HOOKS..............................................
-
+        editsearch = findViewById(R.id.search);
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
         card3 = (CardView) findViewById(R.id.card3);
-        card4= (CardView) findViewById(R.id.card4);
         viewAll= findViewById(R.id.view_all);
         topRecycler = findViewById(R.id.top_recycler);
         mostviewed_recycler = findViewById(R.id.viewed_recycler);
@@ -71,15 +81,12 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         dLayout = findViewById(R.id.drawer_layout);
         menu = findViewById(R.id.nav_icon);
         contentView = findViewById(R.id.content);
-
         //.................................CALLINGFUNCTION.........................................
-
         topRecycler();
         mostviewed_recycler();
         card1.setOnClickListener(this);
         card2.setOnClickListener(this);
         card3.setOnClickListener(this);
-        card4.setOnClickListener(this);
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener( this);
         navigationView.setCheckedItem(R.id.profile);
@@ -89,7 +96,6 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
        toggle.syncState();
        viewAll.setOnClickListener(this);
     }
-
     //....................................................METHODS........................................
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -117,8 +123,8 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
             super.onBackPressed();
     }
 
-
     private void animateNavigationDrawer() {
+
         dLayout.setScrimColor(getResources().getColor(R.color.babypink));
         dLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -148,10 +154,10 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         mostViewed.add(new MostViewedHelperClass(R.drawable.minitreats, "Mini treats" ));
         mostViewed.add(new MostViewedHelperClass(R.drawable.jalalsons, "Jalal Sons" ));
         mostViewed.add(new MostViewedHelperClass(R.drawable.layers, "Layers" ));
-        adapter1 = new mostViewedAdapter(mostViewed);
+        adapter1 = new mostViewedAdapter(this,mostViewed);
         mostviewed_recycler.setAdapter(adapter1);
-        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400,0xffaff600});
 
+        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400,0xffaff600});
     }
 
     private void topRecycler() {
@@ -162,8 +168,10 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         topViewed.add(new TopHelperClass(R.drawable.minitreats, "Mini treats" ));
         topViewed.add(new TopHelperClass(R.drawable.jalalsons, "Jalal Sons" ));
         topViewed.add(new TopHelperClass(R.drawable.layers, "Layers" ));
-        adapter = new TopAdapter(topViewed);
+        topViewed.add(new TopHelperClass(R.drawable.cakesnbakes,"Cakes & Bakes"));
+        adapter = new TopAdapter(this,topViewed);
         topRecycler.setAdapter(adapter);
+            //Toast.makeText(home_screen.this,"No such data ",Toast.LENGTH_SHORT).show();
         GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400,0xffaff600});
 
     }
@@ -184,10 +192,6 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
                 i = new Intent(this, prebooking.class);
                 startActivity(i);
                 break;
-            case R.id.card4:
-                i = new Intent(this, Delivery.class);
-                startActivity(i);
-                break;
             case R.id.view_all:
                 i = new Intent(this,Delivery.class);
                 startActivity(i);
@@ -195,7 +199,6 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         }
 
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -232,4 +235,7 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         dLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }

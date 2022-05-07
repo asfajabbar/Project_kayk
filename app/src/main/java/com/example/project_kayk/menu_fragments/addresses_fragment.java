@@ -20,8 +20,8 @@ public class addresses_fragment extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addresses_fragment);
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
         closebtn.setOnClickListener((view) ->
         {

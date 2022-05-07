@@ -19,15 +19,6 @@
             android:backgroundTint="#fae9ff"
             android:src="@drawable/nav" />
 
-        <ImageView
-            android:id="@+id/lottie"
-            android:layout_width="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_height="40dp"
-            android:src="@drawable/cart"
-            android:padding="5dp"
-            android:layout_centerVertical="true"
-           />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -87,19 +78,13 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000">
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
+                    android:background="@color/white">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/jalalsons" />
-
-
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/layers" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -108,26 +93,20 @@
                 android:id="@+id/prebook2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
+                    android:background="@color/white"
                     >
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/layers"
+                        android:src="@drawable/minitreats"
                         android:background="@color/white"
                         android:scaleType="fitCenter" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
-
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -135,24 +114,20 @@
                 android:id="@+id/prebook3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
+                    android:background="@color/white"
                     >
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/jalalsons"
-                        android:scaleType="centerCrop" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
+                        android:src="@drawable/baskinrobin"
+                        android:scaleType="fitCenter" />
+
 
 
                 </RelativeLayout>

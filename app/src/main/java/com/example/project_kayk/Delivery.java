@@ -14,6 +14,7 @@ public CardView bakery1,bakery2,bakery3,bakery4;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
+        getSupportActionBar().hide();
         bakery1 = (CardView) findViewById(R.id.bakery1);
         bakery2 = (CardView) findViewById(R.id.bakery2);
         bakery3 = (CardView) findViewById(R.id.bakery3);

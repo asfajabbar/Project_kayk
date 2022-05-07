@@ -8,8 +8,10 @@
     app:cardElevation="8dp">
 
     <RelativeLayout
+        android:id="@+id/most"
         android:layout_width="300dp"
         android:layout_height="150dp"
+        android:contextClickable="true"
         android:background="@color/white"
         android:padding="10dp">
 

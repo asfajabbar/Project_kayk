@@ -79,25 +79,20 @@
                 android:id="@+id/pickbakery1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
+                    android:background="@color/white"
                     >
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/jalalsons" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/cakesnbakes" />
 
 
                 </RelativeLayout>
@@ -107,25 +102,20 @@
                 android:id="@+id/pickbakery2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
+                    android:background="@color/white"
                     >
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/layers"
+                        android:src="@drawable/jalalsons"
                         android:background="@color/white"
                         android:scaleType="fitCenter" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
 
 
                 </RelativeLayout>
@@ -134,24 +124,18 @@
                 android:id="@+id/pickbakery3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
-                    >
+                    android:background="@color/white">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/jalalsons"
-                        android:scaleType="centerCrop" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
+                        android:src="@drawable/cakemystery"
+                        android:scaleType="fitCenter" />
 
 
                 </RelativeLayout>
@@ -160,24 +144,19 @@
                 android:id="@+id/pickbakery4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor= "#000000"
+                app:cardBackgroundColor= "@color/white"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#000000"
+                    android:background="@color/white"
                     >
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/jalalsons"
-                        android:scaleType="centerCrop" />
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:rating="4.1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"/>
+                        android:src="@drawable/minitreats"
+                        android:scaleType="fitCenter" />
 
 
                 </RelativeLayout>

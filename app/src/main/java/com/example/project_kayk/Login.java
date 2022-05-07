@@ -49,6 +49,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         callSignUp = findViewById(R.id.newuser);
         login_btn = findViewById(R.id.log);
@@ -71,14 +72,18 @@ public class Login extends AppCompatActivity {
             startActivity(i);
             finish();
         });
-login_btn.setOnClickListener(new View.OnClickListener() {
+        forgotpassword.setOnClickListener(view -> {
+            Intent i = new Intent(Login.this, ForgotPassword.class);
+            startActivity(i);
+        });
+    login_btn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         String userEmail = useremail.getText().toString();
         String userPaswd = password.getText().toString();
         if (userEmail.isEmpty())
         {
-            useremail.setError("Provide your Email first!");
+            useremail.setError("Empty");
             useremail.requestFocus();
         }
         else if (userPaswd.isEmpty())

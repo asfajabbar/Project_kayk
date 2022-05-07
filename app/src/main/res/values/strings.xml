@@ -8,4 +8,9 @@
     <string name="wrong">Something went to wrong please try again later</string>
     <string name="select">Select</string>
     <string name="tagline">Baking your ideas to life</string>
+    <string name="help">Customer Satisfaction is our first priority.</string>
+    <string name="contact">Feel free to contact us on: kaykofficial2022@gmail.com</string>
+    <string name="about">In this revolutionary world, Internet keeps people connected to each other. E-commerce has changed the way of buying and selling products. People love to customize the things with their own choice. Kayk is also one of those interesting applications where people can design their own cake the way they love it. This application will let you design the 2 dimensional cakes,and let you see what it looks like from all sides. This app provides the most efficient way to contact the best bakers of your area to place your customized orders.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

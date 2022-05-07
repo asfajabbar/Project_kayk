@@ -1,29 +1,40 @@
 package com.example.project_kayk.HelperClasses.HomeAdapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.project_kayk.Delivery;
 import com.example.project_kayk.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
+import java.util.Collection;
 
-public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
+public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder>  {
     ArrayList<TopHelperClass> topViewed;
+    Context context;
 
-    public TopAdapter(ArrayList<TopHelperClass> topViewed) {
+
+    public TopAdapter(Context context,ArrayList<TopHelperClass> topViewed) {
         this.topViewed = topViewed;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_bakeries,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_bakeries, parent, false);
         ViewHolder topViewHolder = new ViewHolder(view);
         return topViewHolder;
     }
@@ -33,7 +44,14 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
         TopHelperClass topHelperClass = topViewed.get(position);
         holder.image.setImageResource(topHelperClass.getImage());
         holder.title.setText(topHelperClass.getTitle());
-
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Delivery.class);
+                intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -41,19 +59,21 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
         return topViewed.size();
     }
 
-
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
         TextView title;
+
+        // RelativeLayout l1;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.mini_treats);
             title = itemView.findViewById(R.id.minitreats_title);
-
         }
     }
-
-
-
 }
+
+
+
+
+
