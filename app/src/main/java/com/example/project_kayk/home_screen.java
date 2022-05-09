@@ -56,7 +56,7 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
      RecyclerView topRecycler,mostviewed_recycler;
      RecyclerView.Adapter adapter;
      RecyclerView.Adapter adapter1;
-     public CardView card1,card2,card3;
+     public CardView card1,card2,card3,card4;
      DrawerLayout dLayout;
      NavigationView navigationView;
      ImageView menu;
@@ -74,6 +74,7 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
         card3 = (CardView) findViewById(R.id.card3);
+        card4 = (CardView) findViewById(R.id.card4);
         viewAll= findViewById(R.id.view_all);
         topRecycler = findViewById(R.id.top_recycler);
         mostviewed_recycler = findViewById(R.id.viewed_recycler);
@@ -87,6 +88,7 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
         card1.setOnClickListener(this);
         card2.setOnClickListener(this);
         card3.setOnClickListener(this);
+        card4.setOnClickListener(this);
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener( this);
         navigationView.setCheckedItem(R.id.profile);
@@ -190,6 +192,10 @@ public class home_screen extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.card3:
                 i = new Intent(this, prebooking.class);
+                startActivity(i);
+                break;
+            case R.id.card4:
+                i = new Intent(this, Customise_Frag.class);
                 startActivity(i);
                 break;
             case R.id.view_all:

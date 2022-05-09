@@ -4,42 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".option_screen"
     android:orientation="vertical"
-    android:background="@color/white">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:fitsSystemWindows="true"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="@color/white"
-        tools:ignore="MissingConstraints">
-        <ImageView
-            android:id="@+id/close_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/black"
-            android:src="@drawable/back_button"
-            android:layout_marginTop="5dp" />
-    </androidx.appcompat.widget.Toolbar>
+    tools:context=".option_screen">
     <com.google.android.material.tabs.TabLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:id="@+id/tablayout1"
-             android:background="@drawable/back_select"
-             app:tabTextColor="@color/white"
-             app:tabMode="fixed"
-             app:tabGravity="fill"
-             app:tabIndicatorAnimationMode="elastic"
-             app:tabIndicatorColor="@color/white">
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tabLayout"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorGravity="stretch"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorAnimationMode="elastic"
+        android:background="@drawable/back_tabs"
+        app:tabIndicator="@color/white"/>
 
-      </com.google.android.material.tabs.TabLayout>
-            <androidx.viewpager2.widget.ViewPager2
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/viewpage">
-            </androidx.viewpager2.widget.ViewPager2>
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager2"/>
 
-        </LinearLayout>
+
+
+</LinearLayout>
+
+

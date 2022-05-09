@@ -66,7 +66,6 @@ public class signup extends AppCompatActivity {
         regPassword = findViewById(R.id.newpassword);
         regBtn = findViewById(R.id.signup);
         google_btn = findViewById(R.id.google_btn);
-        getSupportActionBar().hide();
         confirmPass = findViewById(R.id.confirmpassword);
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         login_logo.setAnimation(topAnim);

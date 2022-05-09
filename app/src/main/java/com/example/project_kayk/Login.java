@@ -59,7 +59,6 @@ public class Login extends AppCompatActivity {
         forgotpassword=findViewById(R.id.fp);
         useremail = findViewById(R.id.userlogin);
         password = findViewById(R.id.passlogin);
-        getSupportActionBar().hide();
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
         image.setAnimation(topAnim);
