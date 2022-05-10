@@ -13,7 +13,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_kayk">
         <activity
-            android:name=".Menu_Frag"
+            android:name=".BaskinRobins_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".MiniTreats_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".CakeMystery_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Jalalsons_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Karamel_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Baba_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Malmo_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Layers_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Confirm_order"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CakesBakes_Menu"
             android:exported="false" />
         <activity
             android:name=".Customise_Frag"
@@ -23,9 +53,6 @@
             android:exported="false" />
         <activity
             android:name=".verify_phone"
-            android:exported="false" />
-        <activity
-            android:name=".option_screen"
             android:exported="false" />
         <activity
             android:name=".menu_fragments.logout_fragment"

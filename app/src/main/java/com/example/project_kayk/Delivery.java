@@ -2,7 +2,6 @@ package com.example.project_kayk;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,19 +31,19 @@ public CardView bakery1,bakery2,bakery3,bakery4;
         Intent i;
         switch (view.getId()){
             case R.id.bakery1:
-                i = new Intent(this, Menu_Frag.class);
+                i = new Intent(this, Layers_Menu.class);
                 startActivity(i);
                 break;
             case R.id.bakery2:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, Malmo_Menu.class);
                 startActivity(i);
                 break;
             case R.id.bakery3:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, Baba_Menu.class);
                 startActivity(i);
                 break;
                 case R.id.bakery4:
-                    i = new Intent(this, option_screen.class);
+                    i = new Intent(this, Karamel_Menu.class);
                     startActivity(i);
                     break;
 

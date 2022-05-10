@@ -9,4 +9,9 @@ public class Users {
     public Users(String username) {
         this.username = username;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

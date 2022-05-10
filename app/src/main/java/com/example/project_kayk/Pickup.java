@@ -28,19 +28,19 @@ public class Pickup extends AppCompatActivity implements View.OnClickListener {
         Intent i;
         switch (view.getId()){
             case R.id.pickbakery1:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, CakesBakes_Menu.class);
                 startActivity(i);
                 break;
             case R.id.pickbakery2:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, Jalalsons_Menu.class);
                 startActivity(i);
                 break;
             case R.id.pickbakery3:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, CakeMystery_Menu.class);
                 startActivity(i);
                 break;
             case R.id.pickbakery4:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, MiniTreats_Menu.class);
                 startActivity(i);
                 break;
 

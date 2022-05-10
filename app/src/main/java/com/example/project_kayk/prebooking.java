@@ -31,15 +31,15 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
         Intent i;
         switch (view.getId()){
             case R.id.prebook1:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, Layers_Menu.class);
                 startActivity(i);
                 break;
             case R.id.prebook2:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, MiniTreats_Menu.class);
                 startActivity(i);
                 break;
             case R.id.prebook3:
-                i = new Intent(this, option_screen.class);
+                i = new Intent(this, BaskinRobins_Menu.class);
                 startActivity(i);
                 break;
 

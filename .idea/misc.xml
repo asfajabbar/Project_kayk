@@ -12,18 +12,30 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/cart.xml" value="0.1295" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/close.xml" value="0.1175" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/edit_text.xml" value="0.1705" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/feedback.xml" value="0.124" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.124" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.124" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.124" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_baseline_minimize_24.xml" value="0.124" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_baseline_navigate_next_24.xml" value="0.124" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/ic_outline_mark_unread_chat_alt_24.xml" value="0.1175" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/orders.xml" value="0.1175" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/drawable/vie_bg.xml" value="0.1705" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_aboutus_fragment.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_addresses_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_delivery.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_cart.xml" value="0.12" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_confirm_order.xml" value="0.2" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_customise_frag.xml" value="0.2" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_delivery.xml" value="0.15" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_feedback_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_forgot_password.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_help_fragment.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_home_screen.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_layers_menu.xml" value="0.1859375" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_login_tab_frag.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_menu_frag.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_option_screen.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_orders_fragment.xml" value="0.2" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_pickup.xml" value="0.1" />
@@ -32,6 +44,8 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_sign_up_log_in.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/activity_signup_tab_frag.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/cakes_item.xml" value="0.2" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/cart_item.xml" value="0.2" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/header.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/most_viewed.xml" value="0.2" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Project_kayk/app/src/main/res/layout/top_bakeries.xml" value="0.18" />
