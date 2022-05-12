@@ -21,7 +21,7 @@ public class orders_fragment extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_fragment);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
         closebtn.setOnClickListener((view) ->
         {

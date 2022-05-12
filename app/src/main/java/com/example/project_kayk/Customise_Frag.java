@@ -43,12 +43,12 @@ public class Customise_Frag extends AppCompatActivity {
         nestedList1.add("Large");
 
 
-        List<String> nestedList2 = new ArrayList<>();
+        List<String> nestedList2 = new ArrayList<>(); //layers
         nestedList2.add("One");
         nestedList2.add("Two");
 
 
-        List<String> nestedList3 = new ArrayList<>();
+        List<String> nestedList3 = new ArrayList<>(); //sponge
         nestedList3.add("Vanilla");
         nestedList3.add("Chocolate");
         nestedList3.add("Strawberry");
@@ -56,26 +56,26 @@ public class Customise_Frag extends AppCompatActivity {
 
 
 
-        List<String> nestedList4 = new ArrayList<>();
+        List<String> nestedList4 = new ArrayList<>(); //filling
         nestedList4.add("Vanilla");
         nestedList4.add("Chocolate");
         nestedList4.add("Strawberry");
         nestedList4.add("Peanut Butter");
 
-        List<String> nestedList5 = new ArrayList<>();
+        List<String> nestedList5 = new ArrayList<>(); //icing
         nestedList5.add("Vanilla");
         nestedList5.add("Chocolate");
         nestedList5.add("Strawberry");
 
 
-        List<String> nestedList6 = new ArrayList<>();
+        List<String> nestedList6 = new ArrayList<>(); //garnish
         nestedList6.add("Chocolate Chips");
         nestedList6.add("Sprinkles");
         nestedList6.add("Strawberries");
         nestedList6.add("Cherries");
 
 
-        List<String> nestedList7 = new ArrayList<>();
+        List<String> nestedList7 = new ArrayList<>(); //tiers
         nestedList7.add("One");
         nestedList7.add("Two");
 

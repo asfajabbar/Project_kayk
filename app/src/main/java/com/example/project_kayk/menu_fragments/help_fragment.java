@@ -20,7 +20,7 @@ public class help_fragment extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_fragment);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
         closebtn.setOnClickListener((view) ->
         {

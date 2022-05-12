@@ -24,7 +24,7 @@ public class aboutus_fragment extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus_fragment);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
        closebtn.setOnClickListener((view) ->
         {

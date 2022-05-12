@@ -68,13 +68,13 @@
 
         <ImageView
             android:id="@+id/txt_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="210dp"
             android:gravity="center"
             android:src="@drawable/ic_baseline_navigate_next_24"
-            android:visibility="invisible"
+
             app:tint="@color/black" />
 
         <TextView

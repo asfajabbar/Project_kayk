@@ -45,7 +45,7 @@ public class feedback_fragment extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_fragment);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         closebtn= findViewById(R.id.close_btn);
         feedback= findViewById(R.id.feedback);
         user = findViewById(R.id.enter_name);
