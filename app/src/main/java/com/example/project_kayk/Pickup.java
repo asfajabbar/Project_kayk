@@ -35,6 +35,9 @@ public class Pickup extends AppCompatActivity implements View.OnClickListener {
         pick2=(CardView)findViewById(R.id.pickbakery2);
         pick3=(CardView)findViewById(R.id.pickbakery3);
         pick4=(CardView)findViewById(R.id.pickbakery4);
+        navigationView = findViewById(R.id.navigation);
+        dLayout = findViewById(R.id.drawer_layout);
+        menu = findViewById(R.id.nav_icon);
         pick1.setOnClickListener(this);
         pick2.setOnClickListener(this);
         pick3.setOnClickListener(this);

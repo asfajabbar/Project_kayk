@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="2dp"
     android:background="@color/white"
+    app:cardBackgroundColor="@color/white"
     app:cardElevation="8dp">
 
     <RelativeLayout
@@ -20,12 +21,13 @@
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:src="@drawable/layers"
-            android:scaleType="centerCrop"/>
+            android:scaleType="fitCenter"/>
         <TextView
             android:id="@+id/layer_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Layers"
+            android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/layers_image"
             android:layout_marginLeft="10dp"
             android:textSize="20dp" />

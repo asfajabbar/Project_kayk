@@ -28,12 +28,15 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
     NavigationView navigationView;
     ImageView menu;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prebooking);
         prebook1 = (CardView) findViewById(R.id.prebook1);
         prebook2 = (CardView) findViewById(R.id.prebook2);
         prebook3 = (CardView) findViewById(R.id.prebook3);
+        navigationView = findViewById(R.id.navigation);
+        dLayout = findViewById(R.id.drawer_layout);
+        menu = findViewById(R.id.nav_icon);
         prebook1.setOnClickListener(this);
         prebook2.setOnClickListener(this);
         prebook3.setOnClickListener(this);
@@ -88,6 +91,7 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
                 return true;
             }
         });
+
         navigationView.setCheckedItem(R.id.profile);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

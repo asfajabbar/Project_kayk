@@ -129,7 +129,7 @@ public class signup extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(signup.this.getApplicationContext(), "Sign Up successfully " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                Users user = new Users(ru,Email,phone_no);
+                                Users user = new Users(ru,phone_no,Email);
                                 FirebaseDatabase.getInstance().getReference("Users")
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(user);

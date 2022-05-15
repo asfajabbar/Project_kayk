@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     tools:context=".MainActivity"
-    tools:openDrawer="start"
+    tools:openDrawer="end"
     android:background="@color/home_background">
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
@@ -99,8 +99,8 @@
                         app:cardBackgroundColor="@color/card1"
                         android:id="@+id/card1">
                         <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/card1"
                             android:elevation="8dp"
                             android:layout_margin="10dp">
@@ -131,8 +131,8 @@
                         app:cardBackgroundColor="@color/card2"
                         android:id="@+id/card2">
                         <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/card2"
                             android:elevation="8dp"
                             android:layout_margin="10dp">
@@ -164,8 +164,8 @@
                         app:cardBackgroundColor="@color/card3"
                         android:id="@+id/card3">
                         <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/card3"
                             android:elevation="8dp"
                             android:layout_margin="10dp">
@@ -175,7 +175,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pre-Booking"
+                        android:text="PreBooking"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textAlignment="center"
@@ -195,8 +195,8 @@
                         android:background="@color/card4"
                         android:id="@+id/card4">
                         <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/card4"
                             android:elevation="8dp"
                             android:layout_margin="10dp">
