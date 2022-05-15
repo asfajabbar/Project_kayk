@@ -1,60 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="#fae9ff">
-    <RelativeLayout
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".Delivery"
+    android:background="@color/home_background">
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu_items" />
+
+    <LinearLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/nav" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottie"
-            android:layout_width="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_height="40dp"
-            app:lottie_rawRes="@raw/cart"
-            android:padding="5dp"
-            android:layout_centerVertical="true"
-            app:lottie_autoPlay="true"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/home_background">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/white"
-            android:elevation="8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
-                android:text="Search. . . " />
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
+                android:id="@+id/nav_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/search" />
+                android:src="@drawable/nav" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                android:layout_width="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="40dp"
+                app:lottie_rawRes="@raw/cart"
+                android:padding="5dp"
+                android:layout_centerVertical="true"
+                app:lottie_autoPlay="true"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/white"
+                android:elevation="8dp">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/search" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
-    </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -166,5 +183,7 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 
-        </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -35,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class signup extends AppCompatActivity {
     Button regBtn;
     FirebaseAuth firebaseAuth;
     DatabaseReference reference;
-    String User;
+    Users User;
     FirebaseFirestore fStore;
     String userID;
     GoogleSignInClient mGoogleSignInClient;
@@ -73,6 +74,7 @@ public class signup extends AppCompatActivity {
         hello.setAnimation(topAnim);
         alreadyaccBtn = findViewById(R.id.alreadyacc);
         firebaseAuth = FirebaseAuth.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -92,21 +94,20 @@ public class signup extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
        regBtn.setOnClickListener(new android.view.View.OnClickListener() {
            @Override
            public void onClick(android.view.View view) {
-               // Intent iii = new Intent(getApplicationContext(), Login.class);
-                //startActivity(iii);
-                User= regName.getText().toString();
+
+                String ru= regName.getText().toString();
                 String Email= regEmail.getText().toString();
                 String Pass = regPassword.getText().toString();
                 String cPass = confirmPass.getText().toString();
                 String phone_no= regPhone.getText().toString();
-                if (User.isEmpty() && Email.isEmpty() && Pass.isEmpty() && cPass.isEmpty() && phone_no.isEmpty()){
+
+                if (ru.isEmpty() && Email.isEmpty() && Pass.isEmpty() && cPass.isEmpty() && phone_no.isEmpty()){
                     Toast.makeText(signup.this, "All Fields Empty",Toast.LENGTH_SHORT).show();
                 }
-                else if(User.isEmpty()){
+                else if(ru.isEmpty()){
                     Toast.makeText(signup.this, "Name Field Empty",Toast.LENGTH_SHORT).show();
                 }
                 else if(Email.isEmpty()){
@@ -121,32 +122,25 @@ public class signup extends AppCompatActivity {
                 else if (phone_no.isEmpty()){
                     Toast.makeText(signup.this, "Phone Field Empty",Toast.LENGTH_SHORT).show();
                 }
+
                 else{
                     firebaseAuth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(signup.this.getApplicationContext(), "Sign Up unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                userID= firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference= fStore.collection("Users").document(userID);
-                                Map<String,Object> user = new HashMap<>();
-                                user.put("Username",regName);
-                                user.put("Email",regEmail);
-                                user.put("Phone",regPhone);
-                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused)
-                                    {
-                                        Log.d("TAG", "onSuccess: user file has created" + userID);
-                                    }
-                                });
+                                Toast.makeText(signup.this.getApplicationContext(), "Sign Up successfully " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Users user = new Users(ru,Email,phone_no);
+                                FirebaseDatabase.getInstance().getReference("Users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user);
+                                Intent intent = new Intent(signup.this, Login.class);
+                                startActivity(intent);
 
 
 
                             } else {
 
-                                Log.d("uidf",firebaseAuth.getUid());
-                                writeNewUser( firebaseAuth.getUid(),User);
+
                             }
                         }
                     });
@@ -157,12 +151,7 @@ public class signup extends AppCompatActivity {
         });
     }
 
-    private void writeNewUser(String userId, String name) {
-        Users user = new Users(name);
-        reference.child(userId).setValue(name);
-        Intent i = new Intent(getApplicationContext(), home_screen.class);
-        startActivity(i);
-    }
+
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
