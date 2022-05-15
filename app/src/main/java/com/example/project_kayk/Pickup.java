@@ -42,9 +42,9 @@ public class Pickup extends AppCompatActivity implements View.OnClickListener {
         pick2.setOnClickListener(this);
         pick3.setOnClickListener(this);
         pick4.setOnClickListener(this);
-        NavigationDrawer();
-        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this, dLayout, R.string.navigation_drawer_open,  R.string.navigation_drawer_close);
-        toggle.syncState();
+        //NavigationDrawer();
+        //ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this, dLayout, R.string.navigation_drawer_open,  R.string.navigation_drawer_close);
+        //toggle.syncState();
 
     }
     @Override
@@ -54,7 +54,7 @@ public class Pickup extends AppCompatActivity implements View.OnClickListener {
         else
             super.onBackPressed();
     }
-    private void NavigationDrawer() {
+    /*private void NavigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -104,7 +104,7 @@ public class Pickup extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
-    }
+    }*/
     @Override
     public void onClick(View view) {
         Intent i;

@@ -40,9 +40,9 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
         prebook1.setOnClickListener(this);
         prebook2.setOnClickListener(this);
         prebook3.setOnClickListener(this);
-        NavigationDrawer();
-        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this, dLayout, R.string.navigation_drawer_open,  R.string.navigation_drawer_close);
-        toggle.syncState();
+        //NavigationDrawer();
+        //ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this, dLayout, R.string.navigation_drawer_open,  R.string.navigation_drawer_close);
+        //toggle.syncState();
 
     }
     @Override
@@ -52,7 +52,7 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
         else
             super.onBackPressed();
     }
-    private void NavigationDrawer() {
+    /*private void NavigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -103,7 +103,7 @@ public class prebooking extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-    }
+    }*/
     @Override
     public void onClick(View view) {
         Intent i;

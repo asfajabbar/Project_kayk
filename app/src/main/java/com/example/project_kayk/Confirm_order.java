@@ -13,13 +13,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Confirm_order extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class Confirm_order extends AppCompatActivity {
     EditText address, city, postal;
-    Button confirm;
+    Button conbtn;
     Animation topAnim;
     ImageView lock_img;
     TextView confirm_txt;
+    DatabaseReference add_ref;
+    add_set_get add;
 
 
     @Override
@@ -27,45 +31,36 @@ public class Confirm_order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_order);
         //getActionBar().hide();
-        lock_img= findViewById(R.id.lock);
-        confirm_txt= findViewById(R.id.conbtn);
+        lock_img = findViewById(R.id.lock);
+        confirm_txt = findViewById(R.id.confirmtext);
         address = findViewById(R.id.address);
         city = findViewById(R.id.city);
         postal = findViewById(R.id.postal);
-        confirm = findViewById(R.id.conbtn);
+        conbtn = findViewById(R.id.confirmbtn);
+        add = new add_set_get();
+        add_ref = FirebaseDatabase.getInstance().getReference().child("Addresses");
+
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         lock_img.setAnimation(topAnim);
+
         confirm_txt.setAnimation(topAnim);
 
-        confirm.setOnClickListener(new View.OnClickListener() {
+        conbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String Caddress = address.getText().toString().trim();
+            public void onClick(View view) {
+                String ad = address.getText().toString().trim();
+                String c = city.getText().toString().trim();
+                String p = postal.getText().toString().trim();
+                add.setAddress(address.getText().toString().trim());
+                add.setCity(city.getText().toString().trim());
+                add.setPostal(postal.getText().toString().trim());
+                add_ref.push().setValue(add);
+                Toast.makeText(Confirm_order.this, "Order placed ", Toast.LENGTH_SHORT).show();
 
-                if (TextUtils.isEmpty(Caddress)) {
-                    address.setError("Enter Email");
-                    return;
-                }
-
-                String Ccity = city.getText().toString().trim();
-
-                if (TextUtils.isEmpty(Caddress)) {
-                    city.setError("Enter Email");
-                    return;
-                }
-                String Cpostal = postal.getText().toString().trim();
-
-                if (TextUtils.isEmpty(Cpostal)) {
-                    postal.setError("Enter Email");
-                    return;
-                }
-                if(!(TextUtils.isEmpty(Caddress)) && !(TextUtils.isEmpty(Caddress)) && !(TextUtils.isEmpty(Cpostal)) )
-                {
-
-                    Toast.makeText(Confirm_order.this, "Order Placed!.", Toast.LENGTH_LONG).show();
-                }
             }
-
         });
+
     }
+
+
 }
