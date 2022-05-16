@@ -1,5 +1,6 @@
 package com.example.project_kayk;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project_kayk.adapter.NestedAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +25,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     private List<DataModel> mList;
     private List<String> list = new ArrayList<>();
+    Context context;
 
-    public ItemAdapter(List<DataModel> mList){
+    public ItemAdapter(Context context, List<DataModel> mList){
         this.mList  = mList;
+        this.context = context;
     }
     @NonNull
     @Override
@@ -48,7 +53,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             holder.mArrowImage.setImageResource(R.drawable.arrow_down);
         }
 
-        NestedAdapter adapter = new NestedAdapter(list);
+        NestedAdapter adapter = new NestedAdapter(context, list, "layer");
         holder.nestedRecyclerView.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
         holder.nestedRecyclerView.setHasFixedSize(true);
         holder.nestedRecyclerView.setAdapter(adapter);

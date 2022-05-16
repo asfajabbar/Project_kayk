@@ -2,26 +2,43 @@ package com.example.project_kayk;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.project_kayk.fragments.FillingFragment;
+import com.example.project_kayk.fragments.GarnishFragment;
+import com.example.project_kayk.fragments.IcingFragment;
+import com.example.project_kayk.fragments.LayersFragment;
+import com.example.project_kayk.fragments.SpongeFragment;
+import com.example.project_kayk.fragments.TierFragment;
+import com.example.project_kayk.utils.SingletonClass;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customise_Frag extends AppCompatActivity {
     ImageView imageView;
-    TextView text;
+    TextView priceTextView;
     private RecyclerView recyclerView;
     private List<DataModel> mList;
     private ItemAdapter adapter;
+
+    Button next;
+    int count = 1;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,65 +46,187 @@ public class Customise_Frag extends AppCompatActivity {
         //getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_customise_frag);
-        text=findViewById(R.id.pricetag);
-        imageView=findViewById(R.id.cake1);
+
+        priceTextView = findViewById(R.id.pricetag);
+        next = findViewById(R.id.next);
+        imageView = findViewById(R.id.cake1);
+
         recyclerView = findViewById(R.id.main_recyclervie);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         mList = new ArrayList<>();
 
         //list1
-        List<String> nestedList1 = new ArrayList<>();
-        nestedList1.add("Small");
-        nestedList1.add("Medium");
-        nestedList1.add("Large");
+        List<String> sizesList = new ArrayList<>();
+        sizesList.add("Small");
+        sizesList.add("Medium");
+        sizesList.add("Large");
 
 
-        List<String> nestedList2 = new ArrayList<>(); //layers
-        nestedList2.add("One");
-        nestedList2.add("Two");
+        List<String> layersList = new ArrayList<>(); //layers
+        layersList.add("One");
+        layersList.add("Two");
 
 
-        List<String> nestedList3 = new ArrayList<>(); //sponge
-        nestedList3.add("Vanilla");
-        nestedList3.add("Chocolate");
-        nestedList3.add("Strawberry");
-        nestedList3.add("RedVelvet");
+        List<String> spongeList = new ArrayList<>(); //sponge
+        spongeList.add("Vanilla");
+        spongeList.add("Chocolate");
+        spongeList.add("Strawberry");
+        spongeList.add("RedVelvet");
 
 
+        List<String> fillingList = new ArrayList<>(); //filling
+        fillingList.add("Vanilla");
+        fillingList.add("Chocolate");
+        fillingList.add("Strawberry");
+        fillingList.add("Peanut Butter");
 
-        List<String> nestedList4 = new ArrayList<>(); //filling
-        nestedList4.add("Vanilla");
-        nestedList4.add("Chocolate");
-        nestedList4.add("Strawberry");
-        nestedList4.add("Peanut Butter");
-
-        List<String> nestedList5 = new ArrayList<>(); //icing
-        nestedList5.add("Vanilla");
-        nestedList5.add("Chocolate");
-        nestedList5.add("Strawberry");
-
-
-        List<String> nestedList6 = new ArrayList<>(); //garnish
-        nestedList6.add("Chocolate Chips");
-        nestedList6.add("Sprinkles");
-        nestedList6.add("Strawberries");
-        nestedList6.add("Cherries");
+        List<String> icingList = new ArrayList<>(); //icing
+        icingList.add("Vanilla");
+        icingList.add("Chocolate");
+        icingList.add("Strawberry");
 
 
-        List<String> nestedList7 = new ArrayList<>(); //tiers
-        nestedList7.add("One");
-        nestedList7.add("Two");
+        List<String> garnishList = new ArrayList<>(); //garnish
+        garnishList.add("Chocolate Chips");
+        garnishList.add("Sprinkles");
+        garnishList.add("Strawberries");
+        garnishList.add("Cherries");
 
-        mList.add(new DataModel(nestedList1 , "Size"));
-        mList.add(new DataModel( nestedList2,"Layers"));
-        mList.add(new DataModel( nestedList3,"Sponge"));
-        mList.add(new DataModel(nestedList4 ,"Filling"));
-        mList.add(new DataModel(nestedList5,"Icing"));
-        mList.add(new DataModel(nestedList6,"Garnish"));
-        mList.add(new DataModel(nestedList7 ,"Tiers"));
-        adapter = new ItemAdapter(mList);
+
+        List<String> tierList = new ArrayList<>(); //tiers
+        tierList.add("One");
+        tierList.add("Two");
+
+        mList.add(new DataModel(sizesList, "Size"));
+        mList.add(new DataModel(layersList, "Layers"));
+        mList.add(new DataModel(spongeList, "Sponge"));
+        mList.add(new DataModel(fillingList, "Filling"));
+        mList.add(new DataModel(icingList, "Icing"));
+        mList.add(new DataModel(garnishList, "Garnish"));
+        mList.add(new DataModel(tierList, "Tiers"));
+        adapter = new ItemAdapter(context, mList);
         recyclerView.setAdapter(adapter);
+
+        ////////////////////////////////////////////////////
+        ////// new code to select properites from here//////
+        ////////////////////////////////////////////////////
+
+        replaceFragment(new LayersFragment());
+        clicks();
+
+    }
+
+    public void setImage(String imageFromAssets) {
+        // load image
+
+        priceTextView.setText("$ "+String.valueOf(SingletonClass.price));
+
+        try {
+            // get input stream
+            InputStream ims = getAssets().open(imageFromAssets);
+            // load image as Drawable
+            Drawable d = Drawable.createFromStream(ims, null);
+            // set image to ImageView
+            imageView.setImageDrawable(d);
+        } catch (IOException ex) {
+            return;
+        }
+    }
+
+    private void clicks() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (++count) {
+                    case 1: {
+                        replaceFragment(new LayersFragment());
+                        break;
+                    }
+                    case 2: {
+                        if (SingletonClass.cakeProperties.getLayers().equals(""))
+                            Toast.makeText(Customise_Frag.this, "Please select layer first", Toast.LENGTH_SHORT).show();
+                        else
+                            replaceFragment(new SpongeFragment());
+                        break;
+                    }
+                    case 3: {
+                        if (SingletonClass.cakeProperties.getLayers().equals("Two")) {
+
+                            if (SingletonClass.cakeProperties.getSponge().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select sponge first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new FillingFragment());
+                        }
+                        else
+                        {
+                            if (SingletonClass.cakeProperties.getSponge().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select sponge first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new IcingFragment());
+                        }
+                        break;
+                    }
+                    case 4: {
+                        if (SingletonClass.cakeProperties.getLayers().equals("Two")) {
+                            if (SingletonClass.cakeProperties.getFilling().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select filling first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new IcingFragment());
+                        } else {
+                            if (SingletonClass.cakeProperties.getIcing().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select icing first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new GarnishFragment());
+                        }
+                        break;
+                    }
+                    case 5: {
+                        if (SingletonClass.cakeProperties.getLayers().equals("Two")) {
+                            if (SingletonClass.cakeProperties.getIcing().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select icing first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new GarnishFragment());
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    }
+                    case 6: {
+                        if (SingletonClass.cakeProperties.getLayers().equals("Two")) {
+                            if (SingletonClass.cakeProperties.getGarnish().equals(""))
+                                Toast.makeText(Customise_Frag.this, "Please select garnish first", Toast.LENGTH_SHORT).show();
+                            else
+                                replaceFragment(new TierFragment());
+                        }
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        --count;
+        super.onBackPressed();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack if needed
+        transaction.replace(R.id.fragment_container, fragment);
+
+        if (count > 1) {
+            transaction.addToBackStack(null);
+        }
+
+// Commit the transaction
+        transaction.commit();
     }
 
 }

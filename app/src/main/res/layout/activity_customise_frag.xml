@@ -22,7 +22,7 @@
             android:id="@+id/pricetag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+$     "
+            android:text="+$"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_gravity="center"
@@ -31,12 +31,42 @@
 
     <ImageView
         android:id="@+id/cake1"
-        android:layout_width="300dp"
-        android:layout_height="245dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/black"
         android:src="@drawable/cakeimage" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_container"
+            android:orientation="vertical"
+            android:layout_above="@+id/next">
+        </LinearLayout>
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="Next"
+            android:backgroundTint="@color/pink"
+            android:id="@+id/next">
+        </Button>
+
+    </RelativeLayout>
+
     <ScrollView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
