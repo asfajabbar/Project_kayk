@@ -1,6 +1,5 @@
 package com.example.project_kayk.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,7 +37,7 @@ public class NestedAdapter extends RecyclerView.Adapter<NestedAdapter.NestedView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NestedViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull NestedViewHolder holder, int position) {
         holder.mTv.setText(mList.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -57,36 +56,60 @@ public class NestedAdapter extends RecyclerView.Adapter<NestedAdapter.NestedView
                     {
 //                        SingletonClass.price = SingletonClass.price + 100;
                         SingletonClass.cakeProperties.setLayers(mList.get(position));
+                        SingletonClass.cakeProperties.setSponge("");
+                        SingletonClass.cakeProperties.setFilling("");
+                        SingletonClass.cakeProperties.setIcing("");
+                        SingletonClass.cakeProperties.setGarnish("");
+                        SingletonClass.cakeProperties.setTiers("");
                         break;
                     }
                     case "sponge":
                     {
-                        SingletonClass.price = SingletonClass.price + 100;
+                        SingletonClass.spongePrice= 100;
+
+                        SingletonClass.totalPrice = SingletonClass.layerPrice + SingletonClass.spongePrice + SingletonClass.fillingPrice +
+                                SingletonClass.icingPrice + SingletonClass.garnishPrice + SingletonClass.tierPrice;
                         SingletonClass.cakeProperties.setSponge(mList.get(position));
                         break;
                     }
                     case "filling":
                     {
-                        SingletonClass.price = SingletonClass.price + 100;
+                        SingletonClass.fillingPrice = 100;
+
+                        SingletonClass.totalPrice = SingletonClass.layerPrice + SingletonClass.spongePrice + SingletonClass.fillingPrice +
+                                SingletonClass.icingPrice + SingletonClass.garnishPrice + SingletonClass.tierPrice;
                         SingletonClass.cakeProperties.setFilling(mList.get(position));
                         break;
                     }
                     case "icing":
                     {
-                        SingletonClass.price = SingletonClass.price + 100;
+                        SingletonClass.icingPrice = 100;
+
+                        SingletonClass.totalPrice = SingletonClass.layerPrice + SingletonClass.spongePrice + SingletonClass.fillingPrice +
+                                SingletonClass.icingPrice + SingletonClass.garnishPrice + SingletonClass.tierPrice;
+
                         SingletonClass.cakeProperties.setIcing(mList.get(position));
                         break;
                     }
                     case "garnish":
                     {
-                        SingletonClass.price = SingletonClass.price + 100;
+                        SingletonClass.garnishPrice = 100;
+
+                        SingletonClass.totalPrice = SingletonClass.layerPrice + SingletonClass.spongePrice + SingletonClass.fillingPrice +
+                                SingletonClass.icingPrice + SingletonClass.garnishPrice + SingletonClass.tierPrice;
+
                         SingletonClass.cakeProperties.setGarnish(mList.get(position));
                         break;
                     }
                     case "tier":
                     {
-                        SingletonClass.price = SingletonClass.price + 100;
+                        SingletonClass.tierPrice = 100;
+
+                        SingletonClass.totalPrice = SingletonClass.layerPrice + SingletonClass.spongePrice + SingletonClass.fillingPrice +
+                                SingletonClass.icingPrice + SingletonClass.garnishPrice + SingletonClass.tierPrice;
+
                         SingletonClass.cakeProperties.setTiers(mList.get(position));
+
                         break;
                     }
                 }

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_kayk">
         <activity
+            android:name=".Customise_Frag"
+            android:exported="false" />
+        <activity
             android:name=".BaskinRobins_Menu"
             android:exported="false" />
         <activity
@@ -44,9 +47,6 @@
             android:exported="false" />
         <activity
             android:name=".CakesBakes_Menu"
-            android:exported="false" />
-        <activity
-            android:name=".Customise_Frag"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

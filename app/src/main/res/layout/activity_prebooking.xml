@@ -13,7 +13,7 @@
         android:id="@+id/navigation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
+        android:layout_gravity="end"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_items" />
@@ -101,6 +101,10 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="34dp"
+                        android:layout_marginBottom="0dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/layers" />
 
@@ -119,12 +123,17 @@
                     android:layout_height="150dp"
                     android:background="@color/white"
                     >
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/minitreats"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="0dp"
                         android:background="@color/white"
-                        android:scaleType="fitCenter" />
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/minitreats" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -140,12 +149,16 @@
                     android:layout_height="150dp"
                     android:background="@color/white"
                     >
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/baskinrobin"
-                        android:scaleType="fitCenter" />
-
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="0dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/br" />
 
 
                 </RelativeLayout>

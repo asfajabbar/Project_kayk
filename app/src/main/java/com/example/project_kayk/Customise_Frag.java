@@ -120,7 +120,7 @@ public class Customise_Frag extends AppCompatActivity {
     public void setImage(String imageFromAssets) {
         // load image
 
-        priceTextView.setText("$ "+String.valueOf(SingletonClass.price));
+        priceTextView.setText("$ "+String.valueOf(SingletonClass.totalPrice));
 
         try {
             // get input stream
@@ -190,7 +190,7 @@ public class Customise_Frag extends AppCompatActivity {
                         }
                         else
                         {
-
+                            replaceFragment(new TierFragment());
                         }
                         break;
                     }

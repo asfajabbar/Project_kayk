@@ -8,7 +8,13 @@ public class SingletonClass {
 
     public static SingletonClass instance = null;
 
-    public static int price = 0;
+    public static int totalPrice = 0;
+    public static int spongePrice = 0;
+    public static int fillingPrice = 0;
+    public static int icingPrice = 0;
+    public static int garnishPrice = 0;
+    public static int layerPrice = 0;
+    public static int tierPrice = 0;
 
     public static CakeProperties cakeProperties = new CakeProperties();
 
@@ -17,7 +23,6 @@ public class SingletonClass {
 
         ArrayList<CakeProperties> cakePropertiesArrayList = new ArrayList<>();
         cakePropertiesArrayList.add(new CakeProperties("", "One", "", "", "", "", "", "1layer"));
-
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "", "", "", "1"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "", "", "", "2"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "", "", "", "3"));
@@ -29,64 +34,64 @@ public class SingletonClass {
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "", "", "8"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "", "", "9"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "", "", "10"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "", "", "11"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "", "", "12"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "", "", "13"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "", "", "14"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "", "", "15"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "", "", "16"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "", "", "14"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "", "", "15"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "", "", "16"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "", "", "11"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "", "", "12"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "", "", "13"));
 
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Chocolate Chips", "", "17"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Sprinkles", "", "18"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Strawberries", "", "19"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Cherries", "", "20"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Strawberries", "", "20"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Vanilla", "Cherries", "", "19"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Chocolate Chips", "", "21"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Sprinkles", "", "22"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Strawberries", "", "23"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Cherries", "", "24"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Strawberries", "", "24"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Chocolate", "Cherries", "", "23"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Chocolate Chips", "", "25"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Sprinkles", "", "26"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Strawberries", "", "27"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Cherries", "", "28"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Strawberries", "", "28"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Chocolate", "", "Strawberry", "Cherries", "", "27"));
 
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Chocolate Chips", "", "29"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Sprinkles", "", "30"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Strawberries", "", "31"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Cherries", "", "32"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Strawberries", "", "32"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Vanilla", "Cherries", "", "31"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Chocolate Chips", "", "33"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Sprinkles", "", "34"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Strawberries", "", "35"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Cherries", "", "36"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Strawberries", "", "36"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Chocolate", "Cherries", "", "35"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Chocolate Chips", "", "37"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Sprinkles", "", "38"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Strawberries", "", "39"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Cherries", "", "40"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Strawberries", "", "40"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Vanilla", "", "Strawberry", "Cherries", "", "39"));
 
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Chocolate Chips", "", "41"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Sprinkles", "", "42"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Strawberries", "", "43"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Cherries", "", "44"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Strawberries", "", "44"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Vanilla", "Cherries", "", "43"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Chocolate Chips", "", "45"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Sprinkles", "", "46"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Strawberries", "", "47"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Cherries", "", "48"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Strawberries", "", "48"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Chocolate", "Cherries", "", "47"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Chocolate Chips", "", "49"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Sprinkles", "", "50"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Strawberries", "", "51"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Cherries", "", "52"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Strawberries", "", "52"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "Strawberry", "", "Strawberry", "Cherries", "", "51"));
 
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Chocolate Chips", "", "53"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Sprinkles", "", "54"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Strawberries", "", "55"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Cherries", "", "56"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Strawberries", "", "56"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Vanilla", "Cherries", "", "55"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Chocolate Chips", "", "57"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Sprinkles", "", "58"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Strawberries", "", "59"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Cherries", "", "60"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Strawberries", "", "60"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Chocolate", "Cherries", "", "59"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Chocolate Chips", "", "61"));
         cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Sprinkles", "", "62"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Strawberries", "", "63"));
-        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Cherries", "", "64"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Strawberries", "", "64"));
+        cakePropertiesArrayList.add(new CakeProperties("", "One", "RedVelvet", "", "Strawberry", "Cherries", "", "63"));
 
         //////////////////////////////////////////////////
         /////////////////// Two Layers ///////////////////
@@ -99,8 +104,8 @@ public class SingletonClass {
 
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "Chocolate", "", "", "", "", "2a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "Vanilla", "", "", "", "", "3a"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "Strawberry", "", "", "", "", "4a"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "", "", "", "", "5a"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "Strawberry", "", "", "", "", "5a"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "", "", "", "", "4a"));
         //Fillings
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "Chocolate", "Chocolate", "", "", "", "6a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "Chocolate", "Vanilla", "", "", "", "7a"));
@@ -147,10 +152,10 @@ public class SingletonClass {
 
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Vanilla", "", "", "46a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Chocolate", "", "", "47a"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawbeery", "", "", "48a"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawberry", "", "", "48a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Vanilla", "", "", "49a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Chocolate", "", "", "50a"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "", "Strawberry", "", "51a"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Strawberry", "", "", "51a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Strawberry", "Vanilla", "", "", "52a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Strawberry", "Chocolate", "", "", "53a"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Strawberry", "Strawberry", "", "", "54a"));
@@ -335,10 +340,10 @@ public class SingletonClass {
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Chocolate", "Sprinkles", "", "219"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Chocolate", "Strawberries", "", "220"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Chocolate", "Cherries", "", "221"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawbeery", "Chocolate Chips", "", "222"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawbeery", "Sprinkles", "", "223"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawbeery", "Strawberries", "", "224"));
-        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawbeery", "Cherries", "", "225"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawberry", "Chocolate Chips", "", "222"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawberry", "Sprinkles", "", "223"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawberry", "Strawberries", "", "224"));
+        cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Chocolate", "Strawberry", "Cherries", "", "225"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Vanilla", "Chocolate Chips", "", "226"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Vanilla", "Sprinkles", "", "227"));
         cakePropertiesArrayList.add(new CakeProperties("", "Two", "RedVelvet", "Vanilla", "Vanilla", "Strawberries", "", "228"));
